@@ -28,6 +28,9 @@ export default function Index()
         </Text>
       </TouchableOpacity>
 
+      <Text className="text-red-700">
+        Prova del modal
+      </Text>
     </View>
   );
 }
