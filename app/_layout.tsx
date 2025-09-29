@@ -23,6 +23,7 @@ export default function RootLayout()
           title: "Lista sondaggi",
         }}
       />
+      <Stack.Screen name="modal" options={{ presentation: "modal", title: "Informazioni" }} />
     </Stack>
   );
 }

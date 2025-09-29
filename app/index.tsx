@@ -28,7 +28,7 @@ export default function Index()
         </Text>
       </TouchableOpacity>
 
-      <Text className="text-red-700">
+      <Text style={{ fontSize: 20 }} className="text-red-700 pt-60" onPress={() => router.navigate('/modal')}>
         Prova del modal
       </Text>
     </View>
