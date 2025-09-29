@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { Button, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Index()
 {
@@ -13,8 +13,27 @@ export default function Index()
         alignItems: "center",
       }}
     >
-      <Button title="Vai alla compilazione" onPress={() => router.navigate('/compilaSurvey')} />
-      <Button title="Vai alla lista" onPress={() => router.navigate('/listaSurvey')} />
+
+      <TouchableOpacity style={styles.pulsante} onPress={() => router.navigate('/compilaSurvey')}>
+        <Text style={{ color: "white" }} numberOfLines={1} adjustsFontSizeToFit={true}>
+          Vai al survey
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={{ ...styles.pulsante }} onPress={() => router.navigate('/compilaSurvey')}>
+        <Text style={{ color: "white" }} numberOfLines={1} adjustsFontSizeToFit={true}>
+          Vai alla lista
+        </Text>
+      </TouchableOpacity>
+
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  pulsante: {
+    backgroundColor: "#4282eaff",
+    padding: 20,
+  },
+});
+
