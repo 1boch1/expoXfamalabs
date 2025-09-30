@@ -1,29 +1,17 @@
 import { Stack } from "expo-router";
 import "../global.css";
 
+import { Provider } from 'react-redux';
+import { store } from '../stores'; // Importa lo store
+
 export default function RootLayout()
 {
   return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{
-          title: "Home",
-        }}
-      />
-      <Stack.Screen
-        name="compilaSurvey"
-        options={{
-          title: "Compila sondaggio",
-        }}
-      />
-      <Stack.Screen
-        name="listaSurvey"
-        options={{
-          title: "Lista sondaggi",
-        }}
-      />
-      <Stack.Screen name="modal" options={{ presentation: "modal", title: "Informazioni" }} />
-    </Stack>
+    <Provider store={store}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ title: "Home", headerShown: false }} />
+        <Stack.Screen name="survey/[id]" options={{ title: "Compila" }} />
+      </Stack>
+    </Provider>
   );
 }
