@@ -1,13 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import surveyReducer from './surveySlice';
+import surveyReducer from './completedSurveysSlice';
+import { surveyApi } from './todoSurveysApi';
 
-// "store" è lo stato che vogliamo comporre
 export const store = configureStore({
-    reducer: { // che in realtà sono possibilmente di più, quidni "reducers"
-        survey: surveyReducer, // reducer questionari
+    reducer: {
+        survey: surveyReducer, // sono i completed survey (quindi array String di ID)
+        [surveyApi.reducerPath]: surveyApi.reducer,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(surveyApi.middleware),
 });
 
-// tipi per TypeScript
+// tipi per TS
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch; 
+export type AppDispatch = typeof store.dispatch;

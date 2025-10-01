@@ -1,0 +1,37 @@
+{
+    "surveys": [
+        {
+            "id": "1",
+            "name": "Medicinali",
+            "fields": {
+                "Hai assunto i medicinali della mattina?": [
+                    "si",
+                    "no"
+                ],
+                "Quanto ti hanno dato noia i medicinali?": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ]
+            }
+        },
+        {
+            "id": "2",
+            "name": "Sintomi",
+            "fields": {
+                "Senti di poter dire di star bene oggi?": [
+                    "si",
+                    "no",
+                    "non lo so"
+                ],
+                "Quanti sintomi hai?": [
+                    "1",
+                    "2",
+                    "3"
+                ]
+            }
+        }
+    ]
+}
