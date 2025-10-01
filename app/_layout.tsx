@@ -4,6 +4,9 @@ import "../global.css";
 import { Provider } from 'react-redux';
 import { store } from '../stores'; // Importa lo store
 
+// qui con selector potremmmo prendere lo stato di login 
+// e decidere route "auth" o "nonauth"
+
 export default function RootLayout()
 {
   return (

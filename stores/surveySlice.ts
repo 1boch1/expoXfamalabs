@@ -7,7 +7,7 @@ interface Survey
     name: string;
     fields: {
         [key: string]: string[];  // ad esempio --> "domanda?": ["si", "no"]
-    };
+    }; // zod: obbligatorio o no?, aggiungere input testo (zod lunghezza massima)
 }
 
 // lo stato dei survey faccio in modo che contenga anche la lista degli id dei questionari 
@@ -90,6 +90,8 @@ const surveySlice = createSlice({
             });
     },
 });
+// swagger e openAPI
+// per chiamate api usare: https://redux-toolkit.js.org/rtk-query/api/createApi
 
 export const { markAsCompleted } = surveySlice.actions;
 
