@@ -32,6 +32,24 @@
                     "3"
                 ]
             }
+        },
+        {
+            "id": "3",
+            "name": "Valutazione",
+            "fields": {
+                "Come valuti il servizio?": [
+                    "pessimo",
+                    "normale",
+                    "ottimo"
+                ],
+                "Voto?": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ]
+            }
         }
     ]
 }
