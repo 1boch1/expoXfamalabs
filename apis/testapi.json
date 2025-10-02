@@ -3,53 +3,55 @@
         {
             "id": "1",
             "name": "Medicinali",
-            "fields": {
-                "Hai assunto i medicinali della mattina?": [
-                    "si",
-                    "no"
-                ],
-                "Quanto ti hanno dato noia i medicinali?": [
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5"
-                ]
-            }
+            "fields": [
+                {
+                    "id": "1",
+                    "question": "Hai assunto i medicinali della mattina?",
+                    "type": "choice",
+                    "options": [
+                        "si",
+                        "no"
+                    ],
+                    "isRequired": true
+                },
+                {
+                    "id": "2",
+                    "question": "Quanto ti hanno dato noia i medicinali?",
+                    "type": "choice",
+                    "options": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ],
+                    "isRequired": true
+                }
+            ]
         },
         {
             "id": "2",
             "name": "Sintomi",
-            "fields": {
-                "Senti di poter dire di star bene oggi?": [
-                    "si",
-                    "no",
-                    "non lo so"
-                ],
-                "Quanti sintomi hai?": [
-                    "1",
-                    "2",
-                    "3"
-                ]
-            }
-        },
-        {
-            "id": "3",
-            "name": "Valutazione",
-            "fields": {
-                "Come valuti il servizio?": [
-                    "pessimo",
-                    "normale",
-                    "ottimo"
-                ],
-                "Voto?": [
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5"
-                ]
-            }
+            "fields": [
+                {
+                    "id": "1",
+                    "question": "Senti di poter dire di star bene oggi?",
+                    "type": "choice",
+                    "options": [
+                        "si",
+                        "no",
+                        "non lo so"
+                    ],
+                    "isRequired": true
+                },
+                {
+                    "id": "2",
+                    "question": "Descrivi i tuoi sintomi in una frase",
+                    "type": "text",
+                    "maxLength": 5,
+                    "isRequired": true
+                }
+            ]
         }
     ]
 }
