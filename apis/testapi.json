@@ -53,5 +53,9 @@
                 }
             ]
         }
-    ]
+    ],
+    "auth": {
+        "isAuth": false,
+        "token": "fake-jwt-123"
+    }
 }
