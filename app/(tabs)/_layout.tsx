@@ -1,6 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from "expo-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { ActivityIndicator, View } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 import { useCheckAuthMutation } from "../../stores/authApi";
 import { setAuth } from "../../stores/authSlice";
@@ -12,6 +13,8 @@ export default function TabsLayout()
     const isAuth = useSelector((state: RootState) => state.auth.isAuth);
 
     const [checkAuth] = useCheckAuthMutation();
+
+    const [loading, setLoading] = useState(true);
 
     // mount di tabs chiamo /auth
     useEffect(() =>
@@ -28,10 +31,25 @@ export default function TabsLayout()
                 console.log(e);
                 dispatch(setAuth({ isAuth: false, token: "" }));
             }
+            finally
+            {
+                setLoading(false);
+            }
         })();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    useEffect(() => console.log(isAuth), [isAuth]);
+
+
+    if (loading)
+    {
+        return (
+            <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                <ActivityIndicator size="large" color="blue" />
+            </View>
+        );
+    }
 
 
     return (
