@@ -1,14 +1,15 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import { Survey } from "../types/survey";
+import { customBaseQueryAuth } from "./customBaseQueryAuth";
 
 export const surveyApi = createApi({
   reducerPath: 'surveyApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://192.168.1.19:3000/' }),
+  baseQuery: customBaseQueryAuth,
   endpoints: (builder) => ({
     getSurveys: builder.query<Survey[], void>({ // la definizione di tipo serve poi ...
       query: () => 'surveys',
     }),
-    getSurveyById: builder.query<Survey, string>({ // TODO ricontrolla tipizzazione qui 
+    getSurveyById: builder.query<Survey, string>({
       query: (id) => `surveys/${id}`,
     }),
   }),
@@ -18,7 +19,7 @@ export const surveyApi = createApi({
 export const { useGetSurveysQuery, useGetSurveyByIdQuery } = surveyApi;
 
 /*
-SIMULO:
+SIMULO LO Swagger:
 
 openapi: 3.0.0
 info:

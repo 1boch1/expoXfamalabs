@@ -29,7 +29,8 @@ export default function TabsLayout()
                 dispatch(setAuth({ isAuth: false, token: "" }));
             }
         })();
-    });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
 
 

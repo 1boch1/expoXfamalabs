@@ -55,7 +55,7 @@
         }
     ],
     "auth": {
-        "isAuth": false,
+        "isAuth": true,
         "token": "fake-jwt-123"
     }
 }
