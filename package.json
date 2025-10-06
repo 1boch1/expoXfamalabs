@@ -9,7 +9,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "zod-schema-generate": "npx openapi-zod-client https://api.famalabs.com/openapi.json -t ./libs/api/generator/zod-schema-formatter.hbs -o ./libs/api/src/zodSchemas.ts --additional-props-default-value=false --group-strategy=tag"
+    "zod-schema-generate": "npx openapi-zod-client https://api.famalabs.com/openapi.json -t ./libs/api/generator/zod-schema-formatter.hbs -o ./libs/api/src/zodSchemas.ts --additional-props-default-value=false --group-strategy=tag",
+    "redux-api-generate": "npx @rtk-query/codegen-openapi ./libs/api/generator/openapi-config.json"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",

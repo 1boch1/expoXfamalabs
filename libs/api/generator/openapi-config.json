@@ -1,0 +1,12 @@
+{
+    "schemaFile": "https://api.famalabs.com/openapi.json",
+    "apiFile": "../src/baseApi.ts",
+    "apiImport": "baseApi",
+    "outputFile": "../src/reduxApi.ts",
+    "hooks": {
+        "queries": true,
+        "mutations": true,
+        "lazyQueries": true
+    },
+    "tag": true
+}
