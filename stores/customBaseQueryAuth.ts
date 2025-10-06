@@ -10,7 +10,7 @@ export const customBaseQueryAuth: BaseQueryFn<
 > = async (args, api, extraOptions) =>
     {
         const rawBaseQuery = fetchBaseQuery({
-            baseUrl: "http://192.168.1.19:3000/",
+            baseUrl: "http://192.168.1.99:3000/",
             prepareHeaders: (headers, { getState }) =>
             {
                 const token = (getState() as RootState).auth.token; // getState() dentro redux-query ci fa accedere allo stato (gli slice)

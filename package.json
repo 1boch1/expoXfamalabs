@@ -8,7 +8,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "zod-schema-generate": "npx openapi-zod-client https://api.famalabs.com/openapi.json -t ./libs/api/generator/zod-schema-formatter.hbs -o ./libs/api/src/zodSchemas.ts --additional-props-default-value=false --group-strategy=tag"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
